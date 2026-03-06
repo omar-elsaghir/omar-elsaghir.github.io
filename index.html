@@ -315,6 +315,74 @@
       background: var(--border);
     }
 
+    /* EXPERIENCE & EDUCATION CARDS */
+    #experience, #education { background: var(--bg); }
+    .education-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .education-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 2px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .education-card:hover {
+      border-color: var(--accent);
+      transform: translateX(5px);
+    }
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent2);
+    }
+    .edu-meta {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .edu-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .exp-bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+    .exp-bullets li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .exp-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
     /* SKILLS */
     #skills { background: var(--surface); }
     .skills-grid {
@@ -363,53 +431,6 @@
       color: var(--muted);
       border-radius: 2px;
       letter-spacing: 0.05em;
-    }
-
-    /* EDUCATION - NEW LAYOUT */
-    #education { background: var(--bg); }
-    .education-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .education-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      border-radius: 2px;
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .education-card:hover {
-      border-color: var(--accent);
-      transform: translateX(5px);
-    }
-    .education-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; bottom: 0;
-      width: 3px;
-      background: var(--accent2);
-    }
-    .edu-meta {
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-    .edu-degree {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .edu-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.8;
     }
 
     /* SERVICES */
@@ -663,6 +684,7 @@
     <a href="#" class="nav-logo">OR_</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#services">Services</a></li>
@@ -699,6 +721,55 @@
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       Scroll to explore
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-inner">
+      <p class="section-label reveal">Career Path</p>
+      <h2 class="section-title reveal">Work Experience</h2>
+      
+      <div class="education-grid">
+        <div class="education-card reveal reveal-delay-1">
+          <div class="edu-meta">DEPI – Digital Egypt Pioneers Initiative (MCIT) | NOV 2025 - Present</div>
+          <h3 class="edu-degree">Microsoft Data Engineer Trainee</h3>
+          <ul class="exp-bullets">
+            <li>Participating in the Data Engineering track, gaining hands-on experience in building data pipelines, ETL workflows, and processing large datasets.</li>
+            <li>Developing technical skills in Python, SQL, Pandas, and Excel, applying them to clean, transform, and analyze real datasets.</li>
+            <li>Practicing data wrangling, aggregation, and modeling using structured exercises with datasets like the Stack Overflow Developer Survey.</li>
+            <li>Learning best practices for data architecture, workflow reliability, and pipeline optimization to prepare for a Junior Data Engineer role.</li>
+          </ul>
+          <div class="project-stack" style="margin-top: 1.5rem;">
+            <span class="stack-badge">Python</span>
+            <span class="stack-badge">SQL</span>
+            <span class="stack-badge">Pandas</span>
+            <span class="stack-badge">Excel</span>
+            <span class="stack-badge">ETL</span>
+            <span class="stack-badge">Data Pipelines</span>
+            <span class="stack-badge">Data Modeling</span>
+            <span class="stack-badge">Data Wrangling</span>
+          </div>
+        </div>
+
+        <div class="education-card reveal reveal-delay-2">
+          <div class="edu-meta">ALX | MAY 2025 - OCT 2025</div>
+          <h3 class="edu-degree">Math Tutor Volunteer</h3>
+          <ul class="exp-bullets">
+            <li>Provided one-on-one and group tutoring in algebra, calculus, and foundational math to strengthen students’ problem-solving skills.</li>
+            <li>Simplified complex concepts into clear steps and designed practice exercises to enhance analytical thinking and exam performance.</li>
+            <li>Delivered personalized support and feedback, helping students build confidence in tackling mathematical challenges.</li>
+          </ul>
+          <div class="project-stack" style="margin-top: 1.5rem;">
+            <span class="stack-badge">Problem Solving</span>
+            <span class="stack-badge">Teaching</span>
+            <span class="stack-badge">Calculus</span>
+            <span class="stack-badge">Algebra</span>
+            <span class="stack-badge">Communication</span>
+            <span class="stack-badge">Analytical Thinking</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -767,7 +838,7 @@
       <div class="education-grid">
         <div class="education-card reveal reveal-delay-1">
           <div class="edu-meta">Alexandria University | 2024-2028</div>
-          <h3 class="edu-degree">Computer science specialized in AI</h3>
+          <h3 class="edu-degree">Computer Science specialized in AI</h3>
           <p class="edu-desc">
             Studied computer science and data science fundamentals, gaining strong skills in programming, algorithms, databases, AI, data analysis, and numerical computations, machine learning, and data engineering.
           </p>
