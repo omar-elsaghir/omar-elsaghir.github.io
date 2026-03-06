@@ -144,6 +144,47 @@
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.1); opacity: 0.7; }
     }
+    
+    /* HERO LAYOUT & IMAGE */
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      z-index: 10;
+    }
+    .hero-text {
+      flex: 1.2;
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      filter: grayscale(100%) contrast(1.1);
+      box-shadow: 0 0 30px var(--glow);
+      transition: all 0.5s ease;
+    }
+    .profile-img:hover {
+      filter: grayscale(0%) contrast(1);
+      border-color: var(--accent);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+    }
+
     .hero-tag {
       font-size: 0.7rem;
       letter-spacing: 0.2em;
@@ -246,47 +287,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    /* HERO LAYOUT & IMAGE */
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4rem;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      z-index: 10;
-    }
-    .hero-text {
-      flex: 1.2;
-    }
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
-    }
-    .profile-img {
-      width: 100%;
-      max-width: 380px;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      /* Tech styling: Grayscale by default, glowing shadow */
-      filter: grayscale(100%) contrast(1.1);
-      box-shadow: 0 0 30px var(--glow);
-      transition: all 0.5s ease;
-    }
-    .profile-img:hover {
-      /* Returns to color and lifts up on hover */
-      filter: grayscale(0%) contrast(1);
-      border-color: var(--accent);
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
-    }
 
     /* SECTION LAYOUT */
     .section-inner {
@@ -365,6 +365,58 @@
       letter-spacing: 0.05em;
     }
 
+    /* EDUCATION */
+    #education { background: var(--bg); }
+    .education-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 2px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .education-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent2);
+    }
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+    .edu-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.8rem;
+      background: rgba(0,229,255,0.05);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 2px;
+    }
+    .edu-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
     /* SERVICES */
     .services-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .service-item {
@@ -419,7 +471,6 @@
       overflow: hidden;
     }
 
-    /* --- THE FIX --- */
     a.project-card {
       text-decoration: none !important;
       color: var(--text) !important; 
@@ -434,7 +485,6 @@
     a.project-card .project-deliverables {
       color: var(--muted) !important;
     }
-    /* ---------------- */
 
     .project-card::after {
       content: '';
@@ -608,6 +658,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -699,6 +750,24 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label reveal">Academic Background</p>
+      <h2 class="section-title reveal">Education</h2>
+      
+      <div class="education-card reveal">
+        <div class="edu-header">
+          <h3 class="edu-degree">Computer Science, Specialized in AI</h3>
+          <span class="edu-date">Pathway Graduate</span>
+        </div>
+        <p class="edu-desc">
+          Studied computer science and data science fundamentals, gaining strong skills in programming, algorithms, databases, AI, data analysis, numerical computations, machine learning, and data engineering. Developed skills in leadership, critical thinking, coding, and problem-solving. Advanced into specialized tracks, completed hands-on projects like Skill-Bridge Egypt, and gained access to global university networks, mentorship, and resources for international degree applications and scholarships.
+        </p>
+      </div>
+
     </div>
   </section>
 
