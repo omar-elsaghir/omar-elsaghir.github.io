@@ -358,7 +358,7 @@
       line-height: 1.7;
     }
 
-    /* PROJECTS */
+/* PROJECTS */
     #projects { background: var(--surface); }
     .projects-grid {
       display: grid;
@@ -377,6 +377,24 @@
       position: relative;
       overflow: hidden;
     }
+
+    /* --- THE FIX --- */
+    a.project-card {
+      text-decoration: none !important;
+      color: var(--text) !important; 
+    }
+    a.project-card .project-title {
+      color: var(--text) !important;
+    }
+    a.project-card .project-num {
+      color: var(--accent) !important;
+    }
+    a.project-card .project-desc, 
+    a.project-card .project-deliverables {
+      color: var(--muted) !important;
+    }
+    /* ---------------- */
+
     .project-card::after {
       content: '';
       position: absolute;
@@ -815,4 +833,5 @@
   </script>
 </body>
 </html>
+
 
