@@ -365,8 +365,13 @@
       letter-spacing: 0.05em;
     }
 
-    /* EDUCATION */
+    /* EDUCATION - NEW LAYOUT */
     #education { background: var(--bg); }
+    .education-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     .education-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -378,7 +383,7 @@
     }
     .education-card:hover {
       border-color: var(--accent);
-      transform: translateY(-3px);
+      transform: translateX(5px);
     }
     .education-card::before {
       content: '';
@@ -387,29 +392,19 @@
       width: 3px;
       background: var(--accent2);
     }
-    .edu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .edu-meta {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
     .edu-degree {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 1.3rem;
       color: var(--text);
-    }
-    .edu-date {
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.4rem 0.8rem;
-      background: rgba(0,229,255,0.05);
-      border: 1px solid rgba(0,229,255,0.2);
-      border-radius: 2px;
+      margin-bottom: 1rem;
     }
     .edu-desc {
       font-size: 0.85rem;
@@ -471,9 +466,17 @@
       overflow: hidden;
     }
 
-    a.project-card {
+    /* --- BULLETPROOF LINK FIX FOR PROJECTS --- */
+    a.project-card, 
+    a.project-card:link, 
+    a.project-card:visited, 
+    a.project-card:hover, 
+    a.project-card:active {
       text-decoration: none !important;
-      color: var(--text) !important; 
+      color: inherit !important;
+    }
+    a.project-card * {
+      text-decoration: none !important;
     }
     a.project-card .project-title {
       color: var(--text) !important;
@@ -485,6 +488,10 @@
     a.project-card .project-deliverables {
       color: var(--muted) !important;
     }
+    a.project-card .project-deliverables strong {
+      color: var(--text) !important;
+    }
+    /* ----------------------------------------- */
 
     .project-card::after {
       content: '';
@@ -641,7 +648,6 @@
       .contact-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
       
-      /* New Mobile Rules for the Layout */
       .hero-layout { flex-direction: column-reverse; text-align: left; gap: 3rem; margin-top: 4rem;}
       .hero-cta { justify-content: flex-start; }
       .profile-img { max-width: 300px; margin: 0 auto; }
@@ -758,14 +764,22 @@
       <p class="section-label reveal">Academic Background</p>
       <h2 class="section-title reveal">Education</h2>
       
-      <div class="education-card reveal">
-        <div class="edu-header">
-          <h3 class="edu-degree">Computer Science, Specialized in AI</h3>
-          <span class="edu-date">Pathway Graduate</span>
+      <div class="education-grid">
+        <div class="education-card reveal reveal-delay-1">
+          <div class="edu-meta">Alexandria University | 2024-2028</div>
+          <h3 class="edu-degree">Computer science specialized in AI</h3>
+          <p class="edu-desc">
+            Studied computer science and data science fundamentals, gaining strong skills in programming, algorithms, databases, AI, data analysis, and numerical computations, machine learning, and data engineering.
+          </p>
         </div>
-        <p class="edu-desc">
-          Studied computer science and data science fundamentals, gaining strong skills in programming, algorithms, databases, AI, data analysis, numerical computations, machine learning, and data engineering. Developed skills in leadership, critical thinking, coding, and problem-solving. Advanced into specialized tracks, completed hands-on projects like Skill-Bridge Egypt, and gained access to global university networks, mentorship, and resources for international degree applications and scholarships.
-        </p>
+
+        <div class="education-card reveal reveal-delay-2">
+          <div class="edu-meta">ALX | NOV 2024 - JULY 2025</div>
+          <h3 class="edu-degree">Pathway Graduate</h3>
+          <p class="edu-desc">
+            Skills in leadership, critical thinking, coding, and problem-solving. Advanced into specialized tracks, completed hands-on projects like Skill-Bridge Egypt, and gained access to global university networks, mentorship, and resources for international degree applications and scholarships.
+          </p>
+        </div>
       </div>
 
     </div>
