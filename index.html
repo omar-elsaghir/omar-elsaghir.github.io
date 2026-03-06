@@ -246,6 +246,47 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* HERO LAYOUT & IMAGE */
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      z-index: 10;
+    }
+    .hero-text {
+      flex: 1.2;
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      /* Tech styling: Grayscale by default, glowing shadow */
+      filter: grayscale(100%) contrast(1.1);
+      box-shadow: 0 0 30px var(--glow);
+      transition: all 0.5s ease;
+    }
+    .profile-img:hover {
+      /* Returns to color and lifts up on hover */
+      filter: grayscale(0%) contrast(1);
+      border-color: var(--accent);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+    }
 
     /* SECTION LAYOUT */
     .section-inner {
@@ -358,7 +399,7 @@
       line-height: 1.7;
     }
 
-/* PROJECTS */
+    /* PROJECTS */
     #projects { background: var(--surface); }
     .projects-grid {
       display: grid;
@@ -549,6 +590,11 @@
       .hero-scroll { left: 1.5rem; }
       .contact-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      
+      /* New Mobile Rules for the Layout */
+      .hero-layout { flex-direction: column-reverse; text-align: left; gap: 3rem; margin-top: 4rem;}
+      .hero-cta { justify-content: flex-start; }
+      .profile-img { max-width: 300px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -557,7 +603,6 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">OR_</a>
     <ul class="nav-links">
@@ -569,29 +614,37 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="about">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <p class="hero-tag">Data Engineer · AI Specialist · CS Student</p>
-    <h1 class="hero-title">
-      Omar<br>
-      <span>Ramadan</span>
-    </h1>
-    <p class="hero-desc">
-      I help businesses turn messy raw data into clean, structured datasets and automated data pipelines that make analysis faster and smarter. Passionate about ETL workflows and ML-ready datasets.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    
+    <div class="hero-layout">
+      <div class="hero-text">
+        <p class="hero-tag">Data Engineer · AI Specialist · CS Student</p>
+        <h1 class="hero-title">
+          Omar<br>
+          <span>Ramadan</span>
+        </h1>
+        <p class="hero-desc">
+          I help businesses turn messy raw data into clean, structured datasets and automated data pipelines that make analysis faster and smarter. Passionate about ETL workflows and ML-ready datasets.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://raw.githubusercontent.com/omar-elsaghir/omar-elsaghir.github.io/main/WhatsApp%20Image%202025-12-12%20at%201.15.33%20PM.jpeg" alt="Omar Ramadan" class="profile-img">
+      </div>
     </div>
+
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       Scroll to explore
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
       <p class="section-label reveal">Technical Stack</p>
@@ -649,7 +702,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="section-inner">
       <p class="section-label reveal">What I Do</p>
@@ -693,8 +745,8 @@
       </div>
     </div>
   </section>
-<!-- PROJECTS -->
-  <section id="projects">
+
+<section id="projects">
   <div class="section-inner">
     <p class="section-label reveal">Selected Work</p>
     <h2 class="section-title reveal">Projects</h2>
@@ -748,7 +800,6 @@
   </div>
 </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
       <p class="section-label reveal">Let's Work Together</p>
@@ -791,9 +842,8 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <span>© 2025 Omar Ramadan · Data Engineer</span>
+    <span>© 2026 Omar Ramadan · Data Engineer</span>
     <span>Built with precision · Deployed on GitHub Pages</span>
   </footer>
 
@@ -833,6 +883,3 @@
   </script>
 </body>
 </html>
-
-
-
