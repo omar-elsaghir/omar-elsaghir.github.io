@@ -3,7 +3,7 @@
 A personal portfolio website showcasing my work, skills, and services as a Data Engineer, AI Specialist, and Computer Science student. Built with a modern, dark-themed UI, focusing on clean code, responsive design, and smooth user interactions.
 
 ## 🔗 Live Demo
-[View Live Site](https://omar-ramadan.github.io/) *(Update this link once deployed to GitHub Pages)*
+[View Live Site](https://omar-elsaghir.github.io/) *(Update this link once deployed to GitHub Pages)*
 
 ## ✨ Features
 * **Custom UI/UX:** Dark mode aesthetic with custom cursor tracking and noise overlay for a modern, tech-focused feel.
